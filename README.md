@@ -3,6 +3,8 @@
 
 This document explains how the encryption and decryption process works in the provided code using AES-GCM (Advanced Encryption Standard - Galois/Counter Mode).
 
+---
+
 ## Requirements
 
 To run the encryption and decryption code, ensure the following dependencies are installed on your system:
