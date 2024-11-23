@@ -24,6 +24,8 @@ sudo apt install python3-pycryptodome
 pip install pycryptodome
 ```
 
+---
+
 #### **3. If you encounter an error like `externally-managed-environment` while installing with pip, you can override it using the following command**
 ```bash
 pip install pycryptodome --break-system-packages
