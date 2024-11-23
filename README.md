@@ -1,5 +1,5 @@
 
-# AES-GCM Encryption and Decryption Explanation
+# AES-GCM Encryption and Decryption
 
 This document explains how the encryption and decryption process works in the provided code using AES-GCM (Advanced Encryption Standard - Galois/Counter Mode).
 
