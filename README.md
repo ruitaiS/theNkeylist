@@ -39,7 +39,7 @@ pip install pycryptodome --break-system-packages
 ### 2. **Key Derivation**
 The password is converted into a cryptographic key using a **Key Derivation Function (KDF)**:
 - **Salt**: A random 16-byte value is generated (`get_random_bytes(16)`).
-- **KDF (PBKDF2)**: Combines the password and salt using a secure hash function (SHA-256 by default) and performs multiple iterations (100,000 in your code). This ensures the derived key is unique and strong.
+- **KDF (PBKDF2)**: Combines the password and salt using a secure hash function (SHA-256 by default) and performs multiple iterations (100,000 by default). This ensures the derived key is unique and strong.
 
 **Output**:
 - A **256-bit key** (32 bytes) is derived.
