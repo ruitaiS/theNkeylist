@@ -7,7 +7,6 @@ This document explains how the encryption and decryption process works in the pr
 
 To run the encryption and decryption code, ensure the following dependencies are installed on your system:
 
-### **System Requirements**
 #### **1. Install Python 3 and `pip` (if not already installed)**
    ```bash
    sudo apt update
