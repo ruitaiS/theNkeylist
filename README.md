@@ -71,10 +71,24 @@ This combined binary string is then **Base64-encoded** to ensure it can be safel
 ---
 
 ## Why This Works
-1. **Salt**: Ensures that even if the same password is reused, the derived key will be different for each encryption.
-2. **Nonce**: Ensures that the same plaintext encrypted with the same key produces different ciphertexts.
-3. **Authentication Tag**: Protects against tampering by ensuring that decryption will fail if the ciphertext or nonce has been altered.
+1. **Salt**:
+- Ensures that even if the same password is reused, the derived key will be different for each encryption.
+- The salt is not a secret and is typically transmitted alongside the ciphertext. Its purpose is to ensure the key derived from a password is unique for each encryption.
+- Even if the attacker knows the salt, they cannot derive the key without knowing the password.
+
+2. **Nonce**:
+- Ensures that the same plaintext encrypted with the same key produces different ciphertexts.
+- The nonce (Number Used Once) is also not a secret but must be unique for each encryption operation with the same key.
+- Knowing the nonce doesn’t help the attacker decrypt the ciphertext because the security of AES-GCM relies on the uniqueness of the nonce, not its secrecy.
+
+3. **Authentication Tag**:
+- Protects against tampering by ensuring that decryption will fail if the ciphertext or nonce has been altered.
+- The tag ensures the integrity and authenticity of the ciphertext. An attacker knowing the tag doesn’t allow them to tamper with or forge valid ciphertext because the tag is tied to the specific ciphertext, key, and nonce.
+
 4. **AES-GCM**: Provides robust encryption and built-in integrity checks, making it secure for most applications.
+
+Even if an attacker knows the exact format of the output, (eg. can identify which parts of the Base64-encoded string correspond to the salt, nonce, tag, and ciphertext), this knowledge doesn’t provide any meaningful way to reverse the encryption or forge data.
+
 
 ---
 
