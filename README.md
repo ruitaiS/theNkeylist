@@ -44,8 +44,6 @@ The password is converted into a cryptographic key using a **Key Derivation Func
 **Output**:
 - A **256-bit key** (32 bytes) is derived.
 
----
-
 ### 3. **Encryption with AES**
 AES-GCM mode is used for encryption:
 - **GCM (Galois/Counter Mode)**: Provides encryption and built-in integrity checks (via the authentication tag).
@@ -57,8 +55,6 @@ Key steps:
 **Output**:
 - **Ciphertext**: The encrypted version of the plaintext.
 - **Tag**: The authentication tag, used during decryption to verify data integrity.
-
----
 
 ### 4. **Encoding the Encrypted Data**
 The salt, nonce, ciphertext, and tag are concatenated into a single binary string in the following order:
