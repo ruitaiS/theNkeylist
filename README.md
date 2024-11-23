@@ -8,13 +8,13 @@ This document explains how the encryption and decryption process works in the pr
 To run the encryption and decryption code, ensure the following dependencies are installed on your system:
 
 ### **System Requirements**
-1. Install Python 3 and `pip` (if not already installed):
+#### **1. Install Python 3 and `pip` (if not already installed)**
    ```bash
    sudo apt update
    sudo apt install python3 python3-pip
    ```
    
-### **2. Install the pycryptodome library**
+#### **2. Install the pycryptodome library**
 To install the `pycryptodome` library, use one of the following methods:
 - **Via apt** (recommended for system-wide installation):
 ```bash
@@ -25,7 +25,7 @@ sudo apt install python3-pycryptodome
 pip install pycryptodome
 ```
 
-3. If you encounter an error like externally-managed-environment while installing with pip, you can override it using the following command:
+#### **3. If you encounter an error like externally-managed-environment while installing with pip, you can override it using the following command**
 ```bash
 pip install pycryptodome --break-system-packages
 ```
