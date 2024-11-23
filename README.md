@@ -112,19 +112,12 @@ Ensure you always:
 - Never reuse the **same nonce** across multiple encryptions with the same key.
 
 #### Why is this important?
-1. **Salt**:
-   - The salt ensures that the key derived from a password is unique for each encryption.
-   - Reusing the same salt allows attackers to detect patterns in the derived keys, making your encryption vulnerable to dictionary or rainbow table attacks.
+1. **Reusing the same salt** allows attackers to detect patterns in the derived keys, making your encryption vulnerable to **dictionary** or **rainbow table attacks**.
 
-2. **Nonce**:
-   - The nonce ensures that encrypting the same plaintext with the same key produces different ciphertexts.
-   - Reusing the nonce with the same key can lead to **nonce reuse attacks**, where attackers may recover plaintexts, deduce relationships between messages, or compromise the key itself.
+2. **Reusing the nonce with the same key** can lead to **nonce reuse attacks**, where attackers may recover plaintexts, deduce relationships between messages, or compromise the key itself.
 
 #### What about tag?
-**Tag**:
-   - The tag is automatically generated during encryption and ensures the integrity and authenticity of the ciphertext.
-   - It verifies that the ciphertext has not been tampered with and is tied to the plaintext, key, and nonce.
-   - Users don’t need to manage the tag manually, as it is directly handled by the AES-GCM encryption process.
+Users don’t need to manage the tag manually, as it is directly handled by the AES-GCM encryption process.
 
 
 Both the **salt** and **nonce** are essential for maintaining the confidentiality and integrity of encrypted data. Always generate fresh random values for each encryption operation.
