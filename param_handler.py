@@ -26,6 +26,11 @@ def get_params():
     # Validate the arguments
     validate_params(params)
 
+    #TODO: Read this off the cfg file
+    params.overwrite=True
+    params.encrypted_filetype=".enc"
+    params.decrypted_filetype=".dec"
+
     return params
 
 '''

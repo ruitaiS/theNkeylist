@@ -28,7 +28,7 @@ def write_file(message, filename, subfolder="messages", overwrite=True):
     try:
         with open(filepath, 'w') as file:
             file.write(message)
-        print(f"Message written to '{filepath}'.")
+        print(f"Message saved to: '{filepath}'.")
     except IOError as e:
         print(f"Error: Could not write to the file '{filepath}' due to an IOError: {e}")
         sys.exit(1)

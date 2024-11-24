@@ -1,6 +1,7 @@
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
+import os
 import base64
 import file_handler
 import param_handler
@@ -29,8 +30,12 @@ try:
     key = PBKDF2(password, salt, dkLen=32, count=100000)
     cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
     decrypted_msg = cipher.decrypt_and_verify(ciphertext, tag).decode()
-    #file_handler.write_file(decrypted_msg, )
-    print("Decrypted Message:", decrypted_msg)
+
+    if params.filename:
+        filename, _ = os.path.splitext(params.filename)
+        file_handler.write_file(decrypted_msg, filename+params.decrypted_filetype)
+    else:
+        print("Decrypted Message:", decrypted_msg)
 except ValueError as e:
     if str(e) == "MAC check failed":
         print("Error: MAC check failed. (Most likely a wrong password, or the message has been tampered with)")
