@@ -5,3 +5,4 @@ overwrite by default
 encrypt takes from raw, writes to encrypted
 decrypt takes from encrypted, writes to decrypted
 
+pass params to file_write instead of individual values
