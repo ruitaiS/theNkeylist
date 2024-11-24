@@ -3,6 +3,11 @@ from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 import base64
 
+def process(raw_message, password):
+    print("Raw Message Recieved: ", raw_message)
+    print("Password Recieved: ", password)
+
+'''
 # User Input
 message = "Hello my brudda! :)))"
 password = "abc123"
@@ -19,3 +24,4 @@ encrypted_message = base64.b64encode(
 ).decode()
 
 print("Encrypted Message:", encrypted_message)
+'''

@@ -1,0 +1,7 @@
+-m flag should just do everything in-terminal
+
+-f works on files
+overwrite by default
+encrypt takes from raw, writes to encrypted
+decrypt takes from encrypted, writes to decrypted
+
