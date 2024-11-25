@@ -4,12 +4,10 @@ import sys
 def read_file(filename, subfolder="messages"):
     filepath = os.path.join(subfolder, filename)
 
-    # Check if the file exists
     if not os.path.isfile(filepath):
         print(f"Error: The file at '{filepath}' does not exist or is not a valid file.")
         sys.exit(1)
     
-    # Try to open the file and read it
     try:
         with open(filepath, 'r') as file:
             file_contents = file.read()

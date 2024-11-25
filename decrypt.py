@@ -31,10 +31,14 @@ try:
     cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
     decrypted_msg = cipher.decrypt_and_verify(ciphertext, tag).decode()
 
+    #TODO: Check this control flow
     if params.filename:
         filename, filetype = os.path.splitext(params.filename)
         file_handler.write_file(decrypted_msg, filename+params.decrypted_filetype, overwrite = params.decrypt_overwrite)
         #file_handler.write_file(decrypted_msg, filename, params, op="decrypt")) TODO
+
+        if params.show_decrypted_msg:
+            print("Decrypted Message:", decrypted_msg)            
     else:
         print("Decrypted Message:", decrypted_msg)
 except ValueError as e:
@@ -47,3 +51,6 @@ except ValueError as e:
 
     else:
         print(f"Unknown error during decryption: {e}")
+
+#TODO:
+#os.system('cls' if os.name == 'nt' else 'clear')

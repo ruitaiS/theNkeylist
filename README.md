@@ -30,11 +30,38 @@ pip install pycryptodome
 pip install pycryptodome --break-system-packages
 ```
 ---
-## Encryption Process
+## Running the code
+
+(TODO)
+User configurable parameters are at the end of param_handler.py
+
+encrypt.py handles encryption, decrypt.py handles decryption
+
+-p specifies the password, and is required for both
+
+-f flag reads from a file, eg:
+-m flag reads directly off the terminal string
+(either -f or -m must be used)
+
+examples:
+`python encrypt.py -f foo.txt -p password123`
+`python encrypt.py -m "hello world!" -p password123`
+
+`python decrypt.py -f foo.enc -p password123`
+`python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123`
+
+Recommend clearing the terminal history when you're done. In Bash, the command is:
+`history -c && clear`
+
+## Common Errors and Causes
+(TODO)
+
+
+## Details on the Encryption Process
 
 ### 1. **Input Parameters**
-- **Password**: A user-provided passphrase, e.g., `"your_secure_password"`.
-- **Plaintext**: The message you want to encrypt, e.g., `"Your secret string"`.
+- **Password**: A user-provided passphrase
+- **Plaintext**: The message to encrypt
 
 ### 2. **Key Derivation**
 The password is converted into a cryptographic key using a **Key Derivation Function (KDF)**:
