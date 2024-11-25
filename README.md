@@ -44,14 +44,18 @@ encrypt.py handles encryption, decrypt.py handles decryption
 (either -f or -m must be used)
 
 examples:
-`python encrypt.py -f foo.txt -p password123`
-`python encrypt.py -m "hello world!" -p password123`
+```bash
+python encrypt.py -f foo.txt -p password123
+python encrypt.py -m "hello world!" -p password123
 
-`python decrypt.py -f foo.enc -p password123`
-`python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123`
+python decrypt.py -f foo.enc -p password123
+python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
+```
 
 Recommend clearing the terminal history when you're done. In Bash, the command is:
-`history -c && clear`
+```bash
+history -c && clear
+```
 
 ## Common Errors and Causes
 (TODO)
