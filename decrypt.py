@@ -31,7 +31,6 @@ try:
     cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
     decrypted_msg = cipher.decrypt_and_verify(ciphertext, tag).decode()
 
-    filetype = ""
     if params.filename:
         filename, filetype = os.path.splitext(params.filename)
         file_handler.write_file(decrypted_msg, filename+params.decrypted_filetype, overwrite = params.decrypt_overwrite)
@@ -40,12 +39,11 @@ try:
         print("Decrypted Message:", decrypted_msg)
 except ValueError as e:
     if str(e) == "MAC check failed":
-        print("Error: MAC check failed. (Check the password)")
+        print("Error: MAC check failed.")
+        print("This is most likely due to an incorrect password, but the message may also have been corrupted, or maybe even intercepted and tampered with! :O")
     elif str(e).startswith("Invalid base64-encoded string"):
-        print("TODO")
-        #if params.filename and filetype and filetype != params.encrypted_filetype:
-        #    print("Error: Invalid base64-encoded string. (Check the file extension, and that the message is properly copied)")
-        #elif params.message or (filetype and (filetype == params.encrypted_filetype)):
-        #   print("Error: Invalid base64-encoded string. (Check if the encrypted message is properly copied)")
+        print("Error: Invalid base64-encoded string.")
+        print("You may have copied the encrypted message incorrectly, or specified an unencrypted file (check the file extension).")
+
     else:
         print(f"Unknown error during decryption: {e}")

@@ -29,7 +29,7 @@ def get_params():
     #TODO: Read this off the cfg file
     params.subfolder="messages"
     params.encrypt_overwrite=True
-    params.decrypt_overwrite=False
+    params.decrypt_overwrite=True
     params.encrypted_filetype=".enc"
     params.decrypted_filetype=".dec"
 
