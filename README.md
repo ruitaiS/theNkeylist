@@ -81,22 +81,30 @@ history -c && clear
 User configurable parameters are at the end of `param_handler.py`:
 
 `params.subfolder="messages"`
+
 By default, everything will go into the "messages" subfolder.
 
-`params.encrypted_filetype=".enc"`
-`params.decrypted_filetype=".dec"`
+```
+params.encrypted_filetype=".enc"
+params.decrypted_filetype=".dec"
+```
+
 Specifies the filetype when saving encrypted or decrypted files.
 
 `params.encrypt_overwrite=True`
+
 `encrypt.py -f` creates a new file with the same filename but using the encrypted filetype (`.enc` by default, see below). This parameter specifies whether to overwrite existing files during this process.
 
 `params.decrypt_overwrite=True`
+
 `decrypt.py -f` creates a new file with the same filename but using the decrypted filetype (`.dec` by default, see below). This parameter specifies whether to overwrite existing files during this process.
 
 `params.save_encrypted_msg=False`
+
 If set to true, `encrypt.py -m` will save the encrypted message with an automatically generated filename
 
 `params.show_decrypted_msg=True`
+
 If set to true, `decrypt.py -f` will display the decrypted message, as well as save it to file
 
 
