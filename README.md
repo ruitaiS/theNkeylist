@@ -43,28 +43,21 @@ The input type flag must be either `-f` to specify a plaintext file, or `-m` to 
 
 
 ### Examples
-
-#### Encrypting Data
-- **From a File**:  
   Encrypt the contents of `foo.txt` with the password `password123`:
   ```bash
   python encrypt.py -f foo.txt -p password123
   ```
 
-- **From a String**:  
   Encrypt the string `"hello world!"` with the password `password123`:
   ```bash
   python encrypt.py -m "hello world!" -p password123
   ```
 
-#### Decrypting Data
-- **From an Encrypted File**:  
   Decrypt the file `foo.enc` using the password `password123`:
   ```bash
   python decrypt.py -f foo.enc -p password123
   ```
 
-- **From an Encrypted String**:  
   Decrypt the string `o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ` using the password `password123`:
   ```bash
   python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
@@ -109,9 +102,9 @@ User customizable parameters are located at the end of `param_handler.py`.
   When `True`, `encrypt.py -m` saves the encrypted message with an automatically generated filename.
 
 - **Display Decrypted Messages**  
-  ~~~python
+  ```python
   params.show_decrypted_msg = True
-  ~~~
+  ```
   When `True`, `decrypt.py -f` displays the decrypted message in addition to saving it to a file.
 
 
