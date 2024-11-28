@@ -14,11 +14,10 @@
 
 For more detailed installation instructions, please refer to the [PyCryptodome Documentation](https://www.pycryptodome.org/src/installation).
 
-- **Via apt**
 ```bash
 sudo apt install python3-pycryptodome
 ```
-- **Via pip**
+or
 ```bash
 pip install pycryptodome
 ```
