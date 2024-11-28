@@ -16,11 +16,11 @@ def get_params():
 
     # User Configurable Parameters:
     params.subfolder="messages"
-    params.encrypt_overwrite=True
-    params.decrypt_overwrite=True
-    params.save_encrypted_msg=False # encrypt -m mode will save the encrypted message with an automatically generated filename as well as display it to screen
-    params.show_decrypted_msg=True # decrypt -f mode will display the decrypted message, as well as save it to file
     params.encrypted_filetype=".enc"
     params.decrypted_filetype=".dec"
+    params.encrypt_overwrite=True
+    params.decrypt_overwrite=True
+    params.save_encrypted_msg=False
+    params.show_decrypted_msg=True
 
     return params
