@@ -21,7 +21,7 @@ or
 ```bash
 pip install pycryptodome
 ```
-#### **If you get an `externally-managed-environment` error while installing with pip, you can try overriding it:**
+#### **If you get an `externally-managed-environment` error while installing with pip, you can try:**
 ```bash
 pip install pycryptodome --break-system-packages
 ```
@@ -37,7 +37,7 @@ The encryption and decryption processes are executed via the command line using 
 python [script].py [input type] [input value] -p [password]
 ```
 
-The input type can be `-f` to specify a plaintext file, or `-m` to read a string directly from the terminal (either `-f` or `-m` must be used).
+The input type can be `-f` to specify a filename, or `-m` to read a string directly from the terminal (either `-f` or `-m` must be used).
 
 When encrypting, the password following the `-p` flag can be any secure password of your choice; when decrypting, the provided password must match the password that was used when encrypting the file.
 
@@ -64,7 +64,12 @@ When encrypting, the password following the `-p` flag can be any secure password
   ```
 
 ### Security Note
-It’s recommended to clear your terminal history after using these scripts to prevent sensitive information (e.g., passwords or plaintext) from being exposed. In Bash, run:
+It’s recommended to clear your terminal history after you're done so that passwords and unencrypted messages do not get stored. In Bash, the command is:
 ```bash
 history -c && clear
 ```
+
+---
+
+## Default Behavior and Configurable Parameters
+
