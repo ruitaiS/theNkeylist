@@ -93,11 +93,11 @@ Specifies the filetype when saving encrypted or decrypted files.
 
 `params.encrypt_overwrite=True`
 
-`encrypt.py -f` creates a new file with the same filename but using the encrypted filetype (`.enc` by default, see below). This parameter specifies whether to overwrite existing files during this process.
+`encrypt.py -f` creates a new file with the same filename but with the encrypted filetype. This parameter specifies whether to overwrite existing files during this process.
 
 `params.decrypt_overwrite=True`
 
-`decrypt.py -f` creates a new file with the same filename but using the decrypted filetype (`.dec` by default, see below). This parameter specifies whether to overwrite existing files during this process.
+`decrypt.py -f` creates a new file with the same filename but with the decrypted filetype. This parameter specifies whether to overwrite existing files during this process.
 
 `params.save_encrypted_msg=False`
 
