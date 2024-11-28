@@ -25,3 +25,46 @@ pip install pycryptodome
 ```bash
 pip install pycryptodome --break-system-packages
 ```
+
+---
+
+## Running the code
+
+
+The encryption and decryption processes are executed via the command line using the `encrypt.py` and `decrypt.py` scripts. Both scripts follow a similar structure:
+
+```bash
+python [script].py [input type] [input value] -p [password]
+```
+
+The input type can be `-f` to specify a plaintext file, or `-m` to read a string directly from the terminal (either `-f` or `-m` must be used).
+
+When encrypting, the password following the `-p` flag can be any secure password of your choice; when decrypting, the provided password must match the password that was used when encrypting the file.
+
+
+### Examples
+  Encrypt the contents of `foo.txt` with the password `password123`:
+  ```bash
+  python encrypt.py -f foo.txt -p password123
+  ```
+
+  Encrypt the string `"hello world!"` with the password `password123`:
+  ```bash
+  python encrypt.py -m "hello world!" -p password123
+  ```
+
+  Decrypt the file `foo.enc` using the password `password123`:
+  ```bash
+  python decrypt.py -f foo.enc -p password123
+  ```
+
+  Decrypt the string `o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ` using the password `password123`:
+  ```bash
+  python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
+  ```
+
+### Security Note
+It’s recommended to clear your terminal history after using these scripts to prevent sensitive information (e.g., passwords or plaintext) from being exposed. In Bash, run:
+```bash
+history -c && clear
+```
