@@ -78,34 +78,42 @@ history -c && clear
 
 ### Configurable Parameters
 
-User configurable parameters are at the end of `param_handler.py`:
+User customizable parameters are located at the end of `param_handler.py`.
 
-`params.subfolder="messages"`
+- **Subfolder for Files**  
+  ```python
+  params.subfolder = "messages"
+  ```
+  By default, files are read from and written to the `messages` subfolder.
 
-By default, everything will go into the "messages" subfolder.
+- **File Types for Encryption/Decryption**  
+  ```python
+  params.encrypted_filetype = ".enc"
+  params.decrypted_filetype = ".dec"
+  ```
+  Specifies the file extensions for encrypted and decrypted files.
 
-```
-params.encrypted_filetype=".enc"
-params.decrypted_filetype=".dec"
-```
+- **Overwrite Behavior**  
+  ```python
+  params.encrypt_overwrite = True
+  params.decrypt_overwrite = True
+  ```
+  When using the `-f ` flag, `encrypt.py` and `decrypt.py` will write the output to same filename as the source file, but with the `encrypted_filetype` or `decrypted_filetype` file extension, respectively.
+  - `encrypt_overwrite`: Determines whether existing files are overwritten when using `encrypt.py -f`. 
+  - `decrypt_overwrite`: Determines whether existing files are overwritten when using `decrypt.py -f`.  
 
-Specifies the filetype when saving encrypted or decrypted files.
+- **Save Encrypted Messages**  
+  ```python
+  params.save_encrypted_msg = False
+  ```
+  When `True`, `encrypt.py -m` saves the encrypted message with an automatically generated filename.
 
-`params.encrypt_overwrite=True`
+- **Display Decrypted Messages**  
+  ~~~python
+  params.show_decrypted_msg = True
+  ~~~
+  When `True`, `decrypt.py -f` displays the decrypted message in addition to saving it to a file.
 
-`encrypt.py -f` creates a new file with the same filename but with the encrypted filetype. This parameter specifies whether to overwrite existing files during this process.
-
-`params.decrypt_overwrite=True`
-
-`decrypt.py -f` creates a new file with the same filename but with the decrypted filetype. This parameter specifies whether to overwrite existing files during this process.
-
-`params.save_encrypted_msg=False`
-
-If set to true, `encrypt.py -m` will save the encrypted message with an automatically generated filename
-
-`params.show_decrypted_msg=True`
-
-If set to true, `decrypt.py -f` will display the decrypted message, as well as save it to file
 
 
 ## Common Errors and Causes
