@@ -37,9 +37,9 @@ The encryption and decryption processes are executed via the command line using 
 python [script].py [input type] [input value] -p [password]
 ```
 
-The input type can be `-f` to specify a filename, or `-m` to read a string directly from the terminal (either `-f` or `-m` must be used).
+The input type can be `-f` to specify a filename, or `-m` to read a string directly from the terminal.
 
-When encrypting, the password following the `-p` flag can be any secure password of your choice; when decrypting, the provided password must match the password that was used when encrypting the file.
+When encrypting, the password following the `-p` flag can be any secure password of your choice. When decrypting, the provided password must match the password that was used when encrypting the file.
 
 
 ### Examples
