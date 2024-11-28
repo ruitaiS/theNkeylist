@@ -1,8 +1,5 @@
 
-# AES-GCM Encryption and Decryption
-
-This document explains how the encryption and decryption process works in the provided code using AES-GCM (Advanced Encryption Standard - Galois/Counter Mode).
-
+# AES-GCM Encryption and Decryption with PyCryptodome
 ---
 
 ## Requirements
@@ -14,6 +11,8 @@ This document explains how the encryption and decryption process works in the pr
    ```
    
 #### **Install the pycryptodome library**
+
+For more detailed installation instructions, please refer to the [PyCryptodome Documentation](https://www.pycryptodome.org/src/installation).
 
 - **Via apt**
 ```bash
