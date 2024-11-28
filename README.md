@@ -43,25 +43,19 @@ When encrypting, the password following the `-p` flag can be any secure password
 
 
 ### Examples
-  Encrypt the contents of `foo.txt` with the password `password123`:
-  ```bash
-  python encrypt.py -f foo.txt -p password123
-  ```
+```bash
+#Encrypt the contents of a file:
+python encrypt.py -f foo.txt -p password123
 
-  Encrypt the string `"hello world!"` with the password `password123`:
-  ```bash
-  python encrypt.py -m "hello world!" -p password123
-  ```
+#Encrypt a string:
+python encrypt.py -m "hello world!" -p password123
 
-  Decrypt the file `foo.enc` using the password `password123`:
-  ```bash
-  python decrypt.py -f foo.enc -p password123
-  ```
+#Decrypt an encrypted file:
+python decrypt.py -f foo.enc -p password123
 
-  Decrypt the string `o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ` using the password `password123`:
-  ```bash
-  python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
-  ```
+#Decrypt an encrypted string:
+python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
+```
 
 ### Security Note
 It’s recommended to clear your terminal history after you're done so that passwords and unencrypted messages do not get stored. In Bash, the command is:
