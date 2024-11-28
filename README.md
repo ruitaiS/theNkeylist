@@ -42,18 +42,18 @@ The input type can be `-f` to specify a filename, or `-m` to read a string direc
 When encrypting, the password following the `-p` flag can be any secure password of your choice. When decrypting, the provided password must match the password that was used when encrypting the file.
 
 
-### Examples
+### Examples:
 ```bash
-#Encrypt the contents of a file:
+#Encrypt the contents of a file
 python encrypt.py -f foo.txt -p password123
 
-#Encrypt a string:
+#Encrypt a string
 python encrypt.py -m "hello world!" -p password123
 
-#Decrypt an encrypted file:
+#Decrypt an encrypted file
 python decrypt.py -f foo.enc -p password123
 
-#Decrypt an encrypted string:
+#Decrypt an encrypted string
 python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
 ```
 
