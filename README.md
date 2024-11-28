@@ -32,30 +32,56 @@ pip install pycryptodome --break-system-packages
 ---
 ## Running the code
 
-(TODO)
-User configurable parameters are at the end of param_handler.py
 
-encrypt.py handles encryption, decrypt.py handles decryption
+The encryption and decryption processes are executed via the command line using the `encrypt.py` and `decrypt.py` scripts respectively. Both scripts follow a similar structure:
 
--p specifies the password, and is required for both
-
--f flag reads from a file, eg:
--m flag reads directly off the terminal string
-(either -f or -m must be used)
-
-examples:
 ```bash
-python encrypt.py -f foo.txt -p password123
-python encrypt.py -m "hello world!" -p password123
-
-python decrypt.py -f foo.enc -p password123
-python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
+python [script].py [input type flag] [input value] -p [password]
 ```
 
-Recommend clearing the terminal history when you're done. In Bash, the command is:
+The input type flag must be either `-f` to specify a plaintext file, or `-m` to read a string directly from the terminal. Both scripts require a password following the `-p` flag. When encrypting, this can be any secure password of your choice; when decrypting, the provided password must match the password used to encrypt the file.
+
+
+### Examples
+
+#### Encrypting Data
+- **From a File**:  
+  Encrypt the contents of `foo.txt` with the password `password123`:
+  ```bash
+  python encrypt.py -f foo.txt -p password123
+  ```
+
+- **From a String**:  
+  Encrypt the string `"hello world!"` with the password `password123`:
+  ```bash
+  python encrypt.py -m "hello world!" -p password123
+  ```
+
+#### Decrypting Data
+- **From an Encrypted File**:  
+  Decrypt the file `foo.enc` using the password `password123`:
+  ```bash
+  python decrypt.py -f foo.enc -p password123
+  ```
+
+- **From an Encrypted String**:  
+  Decrypt the string `o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ` using the password `password123`:
+  ```bash
+  python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
+  ```
+
+### Security Note
+It’s recommended to clear your terminal history after using these scripts to prevent sensitive information (e.g., passwords or plaintext) from being exposed. In Bash, run:
 ```bash
 history -c && clear
 ```
+
+
+### Configurable Parameters
+(TODO)
+User configurable parameters are at the end of param_handler.py
+
+
 
 ## Common Errors and Causes
 (TODO)
