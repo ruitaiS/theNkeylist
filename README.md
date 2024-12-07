@@ -5,10 +5,18 @@
 ## Requirements
 
 #### **Make sure Python3 and pip are installed:**
-   ```bash
-   sudo apt update
-   sudo apt install python3 python3-pip
-   ```
+
+Linux:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+```
+
+Windows:
+```bash
+python -m ensurepip --upgrade
+python -m pip install --upgrade pip
+```
    
 #### **Install the pycryptodome library:**
 
@@ -17,7 +25,7 @@ For more detailed installation instructions, please refer to the [PyCryptodome D
 ```bash
 sudo apt install python3-pycryptodome
 ```
-or
+or using pip (on windows):
 ```bash
 pip install pycryptodome
 ```
