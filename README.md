@@ -66,9 +66,16 @@ python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbN
 ```
 
 ### Security Note
-It’s recommended to clear your terminal history after you're done so that passwords and unencrypted messages do not get stored. In Bash, the command is:
+It’s recommended to clear your terminal history after you're done so that passwords and unencrypted messages do not get stored. 
+
+Bash (Ubuntu):
 ```bash
 history -c && clear
+```
+
+Powershell (Windows):
+```bash
+clear-history; clear-host
 ```
 
 ---
