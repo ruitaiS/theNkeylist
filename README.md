@@ -4,6 +4,10 @@
 
 ## Requirements
 
+Linux: chmod and run `install_ubuntu_python3_dependencies.py`
+
+Step by step is below:
+
 #### **Make sure Python3 and pip are installed:**
 
 Linux:
