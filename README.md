@@ -4,7 +4,7 @@
 
 ## Requirements
 
-Linux: chmod and run `install_ubuntu_python3_dependencies.py`
+Linux: chmod+x and run `install_ubuntu_python3_dependencies.sh`
 
 Step by step is below:
 
