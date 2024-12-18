@@ -69,6 +69,38 @@ python decrypt.py -f foo.enc -p password123
 python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
 ```
 
+## User Parameters
+
+Several user configurable parameters can be changed from within the `param_handler.py` file:
+
+### File Directory
+By default the code looks in the "messages" subdirectory when using the -f flag
+```bash
+params.subfolder="messages"
+```
+
+### File Extension
+
+```bash
+params.encrypted_filetype=".enc"
+params.decrypted_filetype=".dec"
+```
+
+### Overwrite Behavior
+
+```bash
+params.encrypt_overwrite=True
+params.decrypt_overwrite=True
+```
+
+### Encrypt / Decrypt Behavior
+
+```bash
+params.save_encrypted_msg=False
+params.show_decrypted_msg=True
+```
+
+
 ### Security Note
 It’s recommended to clear your terminal history after you're done so that passwords and unencrypted messages do not get stored. 
 
