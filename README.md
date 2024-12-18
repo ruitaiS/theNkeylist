@@ -116,5 +116,3 @@ clear-history; clear-host
 
 ---
 
-## Default Behavior and Configurable Parameters
-
