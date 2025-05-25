@@ -38,9 +38,9 @@ try:
         #file_handler.write_file(decrypted_msg, filename, params, op="decrypt")) TODO
 
         if params.show_decrypted_msg:
-            print("Decrypted Message:", decrypted_msg)            
+            print(f"Decrypted Message:\n\n{decrypted_msg}")
     else:
-        print("Decrypted Message:", decrypted_msg)
+        print(f"Decrypted Message:\n\n{decrypted_msg}")
 except ValueError as e:
     if str(e) == "MAC check failed":
         print("Error: MAC check failed.")

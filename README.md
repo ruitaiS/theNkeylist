@@ -21,7 +21,7 @@ Windows:
 python -m ensurepip --upgrade
 python -m pip install --upgrade pip
 ```
-   
+
 #### **Install the pycryptodome library:**
 
 For more detailed installation instructions, please refer to the [PyCryptodome Documentation](https://www.pycryptodome.org/src/installation).
@@ -29,7 +29,7 @@ For more detailed installation instructions, please refer to the [PyCryptodome D
 ```bash
 sudo apt install python3-pycryptodome
 ```
-or using pip (on windows):
+or using pip (if apt doesn't work on linux, or if using windows):
 ```bash
 pip install pycryptodome
 ```
@@ -40,8 +40,23 @@ pip install pycryptodome --break-system-packages
 
 ---
 
-## Running the code
+### Useage:
 
+Here are some example commands:
+
+```bash
+#Encrypt the contents of a file in the `messages` subfolder:
+python encrypt.py -f foo.txt -p password123
+
+#Encrypt a string
+python encrypt.py -m "hello world!" -p password123
+
+#Decrypt an encrypted file in the `messages` subfolder:
+python decrypt.py -f foo.enc -p password123
+
+#Decrypt an encrypted string
+python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
+```
 
 The encryption and decryption processes are executed via the command line using the `encrypt.py` and `decrypt.py` scripts. Both scripts follow a similar structure:
 
@@ -53,28 +68,12 @@ The input type can be `-f` to specify a filename, or `-m` to read a string direc
 
 When encrypting, the password following the `-p` flag can be any secure password of your choice. When decrypting, the provided password must match the password that was used when encrypting the file.
 
-
-### Examples:
-```bash
-#Encrypt the contents of a file
-python encrypt.py -f foo.txt -p password123
-
-#Encrypt a string
-python encrypt.py -m "hello world!" -p password123
-
-#Decrypt an encrypted file
-python decrypt.py -f foo.enc -p password123
-
-#Decrypt an encrypted string
-python decrypt.py -m o92UunLpDmuhPY/gULkZC4ih7PLqXksWQKuqEc5Rth27mFo3poMQnG8tHbNuLxRAIfwX8ntrerpEsfUZ -p password123
-```
-
 ## User Parameters
 
 Several user configurable parameters can be changed from within the `param_handler.py` file:
 
 ### File Directory
-By default the code looks in the "messages" subdirectory when using the -f flag
+By default the code looks in the `messages` subdirectory when using the -f flag
 ```bash
 params.subfolder="messages"
 ```
