@@ -42,7 +42,7 @@ pip install pycryptodome --break-system-packages
 
 ### Quick Encrypt/Decrypt:
 
-`quick_encrypt.py` and `quick_decrypt.py` streamline the process of encrypting shorter messages, at the cost of removing some functionality like user defined password strings and encrypting / decrypting from files.
+`quick_encrypt.py` and `quick_decrypt.py` streamline the process of encrypting shorter messages, at the cost of removing some functionality such as user defined password strings and encrypting / decrypting from files.
 
 
 Run `python quick_encrypt.py` without any additional parameters. The script will prompt you for a message to encrypt, and apply encryption using an automatically generated password. The output will be a single encrypted string which can be directly copy and pasted as an input into `quick_decrypt.py`
