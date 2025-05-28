@@ -1,3 +1,4 @@
 *.dec
 __pycache__/
 __*
+*.swp
