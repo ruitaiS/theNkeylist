@@ -3,14 +3,13 @@ from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 import os
 import base64
-import file_handler
-import param_handler
+import utils
 
-params = param_handler.get_params()
+params = utils.get_params()
 password = params.password
 if params.filename:
     print(f"Encrypting file: {params.filename} with password: {params.password}")
-    message = file_handler.read_file(params.filename)
+    message = utils.read_file(params.filename)
 elif params.message:
     print(f"Encrypting string: {params.message} with password: {params.password}")
     message = params.message
@@ -29,15 +28,12 @@ try:
 
     if params.filename:
         filename, _ = os.path.splitext(params.filename)
-        file_handler.write_file(encrypted_msg, filename+params.encrypted_filetype, overwrite = params.encrypt_overwrite)
-        #file_handler.write_file(decrypted_msg, filename, params, op="encrypt")) TODO
+        utils.write_file(encrypted_msg, filename+params.encrypted_filetype, overwrite = params.encrypt_overwrite)
+        #utils.write_file(decrypted_msg, filename, params, op="encrypt")) TODO
     elif params.save_encrypted_msg:
         filename = encrypted_msg[:8]
-        file_handler.write_file(encrypted_msg, filename+params.encrypted_filetype, overwrite = params.encrypt_overwrite)
+        utils.write_file(encrypted_msg, filename+params.encrypted_filetype, overwrite = params.encrypt_overwrite)
     else:
         print("Encrypted Message:", encrypted_msg)
 except ValueError as e:
     print(f"Unknown error during encryption: {e}")
-
-#TODO:
-#os.system('cls' if os.name == 'nt' else 'clear')

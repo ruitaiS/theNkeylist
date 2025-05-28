@@ -3,15 +3,13 @@ from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 import os
 import base64
-import file_handler
-import param_handler
+import utils
 
-
-params = param_handler.get_params()
+params = utils.get_params()
 password = params.password
 if params.filename:
     print(f"Decrypting file: {params.filename} with password: {params.password}")
-    encrypted_message = file_handler.read_file(params.filename)
+    encrypted_message = utils.read_file(params.filename)
 elif params.message:
     print(f"Decrypting string: {params.message} with password: {params.password}")
     encrypted_message = params.message
@@ -34,8 +32,8 @@ try:
     #TODO: Check this control flow
     if params.filename:
         filename, filetype = os.path.splitext(params.filename)
-        file_handler.write_file(decrypted_msg, filename+params.decrypted_filetype, overwrite = params.decrypt_overwrite)
-        #file_handler.write_file(decrypted_msg, filename, params, op="decrypt")) TODO
+        utils.write_file(decrypted_msg, filename+params.decrypted_filetype, overwrite = params.decrypt_overwrite)
+        #utils.write_file(decrypted_msg, filename, params, op="decrypt")) TODO
 
         if params.show_decrypted_msg:
             print(f"Decrypted Message:\n\n{decrypted_msg}")

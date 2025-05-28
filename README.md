@@ -81,7 +81,7 @@ When encrypting, the password following the `-p` flag can be any secure password
 
 ## User Parameters
 
-Several user configurable parameters can be changed from within the `param_handler.py` file:
+Several user configurable parameters can be changed from within the `utils.py` file:
 
 ### File Directory
 By default the code looks in the `messages` subdirectory when using the -f flag
